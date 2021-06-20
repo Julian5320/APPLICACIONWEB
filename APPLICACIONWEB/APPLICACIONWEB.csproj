@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MODELS\MODELS\MODELS.csproj" />
+    <ProjectReference Include="https://github.com/Julian5320/MODELS/blob/master/MODELS/MODELS.csproj" />
   </ItemGroup>
 
 </Project>
