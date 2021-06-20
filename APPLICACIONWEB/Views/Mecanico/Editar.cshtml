@@ -1,0 +1,70 @@
+﻿@model APPLICACIONWEB.Models.MecanicoModel
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Tipo Documento</label>
+            <br />
+            <select asp-for="mecanico.tipo_documento">
+                <option value="CC">
+                    CC
+                </option>
+                <option value="TI">
+                    TI
+                </option>
+                <option value="RC">
+                    RC
+                </option>
+            </select>
+        </div>
+        <div class="col-md-3" hidden>
+            <label>Documento</label>
+            <input asp-for="mecanico.documento" />
+        </div>
+        <div class="col-md-3">
+            <label>Primer Nombre</label>
+            <input asp-for="mecanico.primer_nombre" />
+        </div>
+        <div class="col-md-3">
+            <label>Segundo Nombre</label>
+            <input asp-for="mecanico.segundo_nombre" />
+        </div>
+        <div class="col-md-3">
+            <label>Primer Apellido</label>
+            <input asp-for="mecanico.primer_apellido" />
+        </div>
+        <div class="col-md-3">
+            <label>Segundo Apellido</label>
+            <input asp-for="mecanico.segundo_apellido" />
+        </div>
+        <div class="col-md-3">
+            <label>Direccion</label>
+            <br />
+            <input asp-for="mecanico.direccion" />
+        </div>
+        <div class="col-md-3">
+            <label>Email</label>
+            <br />
+            <input type="email" asp-for="mecanico.email" />
+        </div>
+        <div class="col-md-3">
+            <label>Celular</label>
+            <br />
+            <input type="tel" asp-for="mecanico.celular" />
+        </div>
+        <div class="col-md-3">
+            <br />
+            <label>Estado</label>
+            <br />
+            <select asp-for="mecanico.estado">
+                <option value="1">
+                    Activo
+                </option>
+                <option value="2">
+                    Inactivo
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn-primary" style="margin:20px; padding:0px">Editar Mecanico</button>
+    </div>
+</form>

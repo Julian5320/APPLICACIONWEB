@@ -1,0 +1,59 @@
+﻿@model APPLICACIONWEB.Models.MecanicoModel
+<h3>@ViewData["Mensaje"]</h3>
+
+<div class="col-sm-12 table-responsive table-condensed table-sm" style="font-size:small">
+
+
+    <table class="table table-hover" id="dataTableCreditos">
+        @if (Model != null)
+        {
+            <thead class="thead-light">
+                <tr>
+                    <th>Tipo Documento</th>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Dirrecion</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.mecanicos)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipo_documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.primer_nombre)
+                        @Html.DisplayFor(modelItem => item.segundo_nombre)
+                        @Html.DisplayFor(modelItem => item.primer_apellido)
+                        @Html.DisplayFor(modelItem => item.segundo_apellido)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estado)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Borrar", "BorrarMecanico", "Mecanico", new { Id = item.documento }, null)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", "Mecanico", new { Id = item.documento }, null)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        }
+    </table>
+    @Html.ActionLink("Crear Nuevo", "Crear", "Mecanico")
+
+</div>
